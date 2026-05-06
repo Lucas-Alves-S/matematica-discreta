@@ -1,0 +1,12 @@
+h1, h2, h3, h4 {
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+h1 { font-size: var(--text-xl); }
+h2 { font-size: var(--text-lg); }
+h3 { font-size: var(--text-md); }
+h4 { font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+
+small { font-size: var(--font-size-small); }
+a { color: var(--color-text); }

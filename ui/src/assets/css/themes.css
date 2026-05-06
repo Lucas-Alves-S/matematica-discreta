@@ -1,0 +1,57 @@
+/* ─── Typography scale ───────────────────────────────── */
+:root {
+  --text-2xs: 0.65rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.83rem;
+  --text-md: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.5rem;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+}
+
+/* ─── Dark theme ─────────────────────────────────────────────────────────── */
+:root.theme-dark {
+  --color-text: #d1ced4;
+  --color-subtext: #98919c;
+  --color-subtext-1: #9a939f;
+
+  --color-background: #17171c;
+  --color-background-mantle: #121216;
+  --color-background-crust: #0e0e11;
+
+  --color-surface: #1e1e24;
+  --color-surface-1: #242329;
+  --color-surface-2: #302e38;
+
+  --color-overlay: #383645;
+  --color-overlay-1: #413e51;
+  --color-overlay-2: #474158;
+
+  --color-border: var(--color-overlay);
+  --color-border-1: var(--color-overlay-1);
+  --color-border-2: var(--color-overlay-2);
+
+  --color-primary: #4739c7;
+  --color-primary-soft: color-mix(in srgb, #4739c7, transparent 80%);
+  --color-secondary: #9275fa;
+  --color-accent: #c975fa;
+
+  --color-success: #40a02b;
+  --color-warning: #df8e1d;
+  --color-danger: #d20f39;
+  --color-link: #1e66f5;
+
+  --color-teal: #1cc4a8;
+  --color-amber: #e8b64c;
+  --color-purple: #9d7de8;
+  --color-purple-soft: color-mix(in srgb, #9d7de8, transparent 82%);
+}

@@ -1,0 +1,45 @@
+@import './variables.css';
+@import './themes.css';
+@import './text.css';
+@import './icons.css';
+@import './button.css';
+@import './calculadoras.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+*::-webkit-scrollbar { width: 5px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(241, 241, 241, 0.4);
+  border-radius: 1rem;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.25s, background-color 0.25s;
+  line-height: 1.5;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

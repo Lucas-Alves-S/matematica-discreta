@@ -1,0 +1,67 @@
+button,
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  line-height: normal;
+
+  &:active {
+    box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  &:disabled {
+    color: color-mix(in hsl, var(--color-text), black 42%);
+    background-color: color-mix(in hsl, var(--color-primary), black 32%);
+    pointer-events: none;
+  }
+}
+
+button.outlined,
+.button.outlined {
+  background: none;
+  outline-style: solid;
+  outline-width: 0.08rem;
+  outline-color: var(--color-border-1);
+  color: var(--color-text);
+
+  &:hover {
+    background-color: var(--color-surface-1);
+  }
+}
+
+button.ghost,
+.button.ghost {
+  background: none;
+  color: var(--color-subtext);
+
+  &:hover {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+}
+
+button.danger,
+.button.danger {
+  background-color: var(--color-danger);
+
+  &:hover {
+    background-color: color-mix(in hsl, var(--color-danger), black 16%);
+  }
+}
+
+button.small,
+.button.small {
+  padding: 0.2rem 0.4rem;
+  font-size: var(--text-xs);
+}
+
+button.round,
+.button.round {
+  border-radius: 24px;
+}
