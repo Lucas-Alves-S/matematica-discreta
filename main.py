@@ -34,6 +34,7 @@ def main():
             cwd=UI_DIR,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            shell=platform.system() == "Windows",
         )
         if not _wait_for_server(DEV_URL):
             print("Erro: servidor Vite não iniciou a tempo.", file=sys.stderr)
