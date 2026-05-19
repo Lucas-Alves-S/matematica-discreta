@@ -1,3 +1,6 @@
+import math
+
+
 class CrivoEratostenes:
     """Crivo de Eratóstenes: encontra todos os primos menores que n."""
 
@@ -12,19 +15,26 @@ class CrivoEratostenes:
 
             sieve = [True] * n
             sieve[0] = sieve[1] = False
-            passos = [f'Lista inicial: números de 2 a {n - 1}']
+            limite = math.isqrt(n - 1)
+            passos = [
+                f'Marque todos os números de 2 a {n - 1} como potencialmente primos.',
+                f'Serão testados apenas primos p ≤ √{n - 1} ≈ {limite} (múltiplos de primos maiores já terão sido eliminados).',
+            ]
 
             p = 2
             while p * p < n:
                 if sieve[p]:
-                    mults = list(range(p * p, n, p))
+                    start = p * p
+                    mults = list(range(start, n, p))
                     for m in mults:
                         sieve[m] = False
-                    passos.append(f'Primo {p}: eliminando múltiplos → {mults}')
+                    passos.append(
+                        f'{p} é primo → eliminar múltiplos de {p} a partir de {p}² = {start}: {mults}'
+                    )
                 p += 1
 
             primos = [i for i in range(2, n) if sieve[i]]
-            passos.append(f'Primos encontrados: {primos}')
+            passos.append(f'Números não eliminados são primos: {primos}')
             return {'primos': primos, 'passos': passos}
         except Exception as e:
             return {'erro': str(e)}

@@ -26,14 +26,15 @@ def base_str_to_decimal(valor: str, base: int) -> int:
 def base_to_decimal_steps(valor: str, base: int) -> tuple[int, list[str]]:
     """Converte string para decimal com expansão posicional. Retorna (valor, passos)."""
     valor = valor.upper().strip()
-    digits = list(reversed(valor))
+    length = len(valor)
     parts = []
     result = 0
-    for i, c in enumerate(digits):
+    for i, c in enumerate(valor):          # MSB first (left to right)
+        power = length - 1 - i
         d = hex_char_to_decimal(c) if base == 16 else int(c)
-        contrib = d * (base ** i)
+        contrib = d * (base ** power)
         result += contrib
-        parts.append(f"  {c} × {base}^{i} = {d} × {base ** i} = {contrib}")
+        parts.append(f"  {c} × {base}^{power} = {d} × {base ** power} = {contrib}")
     return result, parts + [f"Soma = {result}"]
 
 
